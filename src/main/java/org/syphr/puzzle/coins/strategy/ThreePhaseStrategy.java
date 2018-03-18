@@ -23,7 +23,7 @@ import org.syphr.puzzle.coins.Coin;
 import org.syphr.puzzle.coins.Scale;
 import org.syphr.puzzle.coins.Strategy;
 
-public class FourWeighingsStrategy implements Strategy
+public class ThreePhaseStrategy implements Strategy
 {
     @Override
     public Coin findUnique(Set<Coin> coins, Scale scale)
@@ -31,7 +31,8 @@ public class FourWeighingsStrategy implements Strategy
         int count = coins.size();
         if (count % 3 != 0)
         {
-            throw new IllegalArgumentException("Divide by 3 strategy only works on sets divisible by 3");
+            throw new IllegalArgumentException(ThreePhaseStrategy.class.getSimpleName()
+                                               + " is not applicable to sets that are not divisible by 3");
         }
 
         List<Coin> oCoins = new ArrayList<Coin>(coins);
@@ -53,7 +54,8 @@ public class FourWeighingsStrategy implements Strategy
         int count = group1.size();
         if (count % 2 != 0)
         {
-            throw new IllegalArgumentException("Divide by 3 strategy fails when [count / 3] is not even");
+            throw new IllegalArgumentException(ThreePhaseStrategy.class.getSimpleName()
+                                               + " is not applicable to sets where [count / 3] is not even");
         }
 
         List<Coin> group1A = group1.subList(0, count / 2);
