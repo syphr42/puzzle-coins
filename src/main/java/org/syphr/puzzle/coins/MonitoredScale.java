@@ -16,9 +16,28 @@
 package org.syphr.puzzle.coins;
 
 import java.util.Collection;
-import java.util.Comparator;
+import java.util.stream.Collectors;
 
-public interface Scale extends Comparator<Collection<Coin>>
+public class MonitoredScale implements Scale
 {
+    private int weighings;
 
+    @Override
+    public int compare(Collection<Coin> c1, Collection<Coin> c2)
+    {
+        weighings++;
+
+        return c1.stream().collect(Collectors.summingInt(coin -> coin.getWeight()))
+               - c2.stream().collect(Collectors.summingInt(coin -> coin.getWeight()));
+    }
+
+    public int getWeighings()
+    {
+        return weighings;
+    }
+
+    public void reset()
+    {
+        weighings = 0;
+    }
 }

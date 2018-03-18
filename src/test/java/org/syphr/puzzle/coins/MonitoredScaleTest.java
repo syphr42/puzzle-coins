@@ -24,14 +24,15 @@ import java.util.stream.Collectors;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-class ScaleTest
+class MonitoredScaleTest
 {
-    Scale scale;
+    int idGenerator = 0;
+    MonitoredScale scale;
 
     @BeforeEach
     void setup()
     {
-        scale = new Scale();
+        scale = new MonitoredScale();
     }
 
     @Test
@@ -82,9 +83,19 @@ class ScaleTest
         assertEquals(3, scale.getWeighings());
     }
 
+    @Test
+    void resetWeighings()
+    {
+        List<Coin> coins = coins(1);
+        scale.compare(coins, coins);
+        assertEquals(1, scale.getWeighings());
+        scale.reset();
+        assertEquals(0, scale.getWeighings());
+    }
+
     Coin coin(int weight)
     {
-        return new Coin(weight);
+        return new Coin(idGenerator++, weight);
     }
 
     List<Coin> coins(int... weights)

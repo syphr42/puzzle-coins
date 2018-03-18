@@ -17,11 +17,18 @@ package org.syphr.puzzle.coins;
 
 public class Coin
 {
+    private final int id;
     private final int weight;
 
-    public Coin(int weight)
+    public Coin(int id, int weight)
     {
+        this.id = id;
         this.weight = weight;
+    }
+
+    public int getId()
+    {
+        return id;
     }
 
     public int getWeight()
@@ -34,7 +41,7 @@ public class Coin
     {
         final int prime = 31;
         int result = 1;
-        result = prime * result + weight;
+        result = prime * result + id;
         return result;
     }
 
@@ -54,7 +61,7 @@ public class Coin
             return false;
         }
         Coin other = (Coin)obj;
-        if (weight != other.weight)
+        if (id != other.id)
         {
             return false;
         }
@@ -65,7 +72,9 @@ public class Coin
     public String toString()
     {
         StringBuilder builder = new StringBuilder();
-        builder.append("Coin [weight=");
+        builder.append("Coin [id=");
+        builder.append(id);
+        builder.append(", weight=");
         builder.append(weight);
         builder.append("]");
         return builder.toString();
