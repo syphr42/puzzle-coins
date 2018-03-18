@@ -1,0 +1,434 @@
+[
+    {
+        "description": "First coin weighs less",
+        "uniqueCoinId": 1,
+        "coins": [
+            { "id": 1,  "weight": 1 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Second coin weighs less",
+        "uniqueCoinId": 2,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 1 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Third coin weighs less",
+        "uniqueCoinId": 3,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 1 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Fourth coin weighs less",
+        "uniqueCoinId": 4,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 1 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Fifth coin weighs less",
+        "uniqueCoinId": 5,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 1 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Sixth coin weighs less",
+        "uniqueCoinId": 6,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 1 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Seventh coin weighs less",
+        "uniqueCoinId": 7,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 1 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Eigth coin weighs less",
+        "uniqueCoinId": 8,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 1 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Nineth coin weighs less",
+        "uniqueCoinId": 9,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 1 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Tenth coin weighs less",
+        "uniqueCoinId": 10,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 1 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Eleventh coin weighs less",
+        "uniqueCoinId": 11,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 1 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Twelfth coin weighs less",
+        "uniqueCoinId": 12,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 1 }
+        ]
+    },
+    {
+        "description": "First coin weighs more",
+        "uniqueCoinId": 1,
+        "coins": [
+            { "id": 1,  "weight": 3 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Second coin weighs more",
+        "uniqueCoinId": 2,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 3 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Third coin weighs more",
+        "uniqueCoinId": 3,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 3 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Fourth coin weighs more",
+        "uniqueCoinId": 4,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 3 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Fifth coin weighs more",
+        "uniqueCoinId": 5,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 3 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Sixth coin weighs more",
+        "uniqueCoinId": 6,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 3 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Seventh coin weighs more",
+        "uniqueCoinId": 7,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 3 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Eigth coin weighs more",
+        "uniqueCoinId": 8,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 3 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Nineth coin weighs more",
+        "uniqueCoinId": 9,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 3 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Tenth coin weighs more",
+        "uniqueCoinId": 10,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 3 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Eleventh coin weighs more",
+        "uniqueCoinId": 11,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 3 },
+            { "id": 12, "weight": 2 }
+        ]
+    },
+    {
+        "description": "Twelfth coin weighs more",
+        "uniqueCoinId": 12,
+        "coins": [
+            { "id": 1,  "weight": 2 },
+            { "id": 2,  "weight": 2 },
+            { "id": 3,  "weight": 2 },
+            { "id": 4,  "weight": 2 },
+            { "id": 5,  "weight": 2 },
+            { "id": 6,  "weight": 2 },
+            { "id": 7,  "weight": 2 },
+            { "id": 8,  "weight": 2 },
+            { "id": 9,  "weight": 2 },
+            { "id": 10, "weight": 2 },
+            { "id": 11, "weight": 2 },
+            { "id": 12, "weight": 3 }
+        ]
+    }
+]
