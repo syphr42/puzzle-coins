@@ -20,5 +20,5 @@ import java.util.Comparator;
 
 public interface Scale extends Comparator<Collection<Coin>>
 {
-
+    int compare(Coin c1, Coin c2);
 }

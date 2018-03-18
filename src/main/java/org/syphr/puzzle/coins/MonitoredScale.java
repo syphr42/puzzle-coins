@@ -15,6 +15,7 @@
  */
 package org.syphr.puzzle.coins;
 
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
@@ -29,6 +30,12 @@ public class MonitoredScale implements Scale
 
         return c1.stream().collect(Collectors.summingInt(coin -> coin.getWeight()))
                - c2.stream().collect(Collectors.summingInt(coin -> coin.getWeight()));
+    }
+
+    @Override
+    public int compare(Coin c1, Coin c2)
+    {
+        return compare(Arrays.asList(c1), Arrays.asList(c2));
     }
 
     public int getWeighings()
