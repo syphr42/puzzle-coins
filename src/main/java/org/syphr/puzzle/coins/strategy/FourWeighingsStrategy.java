@@ -23,7 +23,7 @@ import org.syphr.puzzle.coins.Coin;
 import org.syphr.puzzle.coins.Scale;
 import org.syphr.puzzle.coins.Strategy;
 
-public class DivideByThreeStrategy implements Strategy
+public class FourWeighingsStrategy implements Strategy
 {
     @Override
     public Coin findUnique(Set<Coin> coins, Scale scale)
