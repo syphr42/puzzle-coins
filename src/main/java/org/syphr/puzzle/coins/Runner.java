@@ -86,10 +86,10 @@ public class Runner
 
     private static void printResults(List<RunResult> results)
     {
-        String divider = "--------------------------------------------|---------|------------";
+        String divider = "--------------------------------------------|------------|------------";
 
         System.out.println(divider);
-        System.out.println("Scenario                                    | Outcome | Weighings |");
+        System.out.println("Scenario                                    | Outcome    | Weighings |");
         System.out.println(divider);
 
         for (RunResult result : results)
@@ -97,7 +97,7 @@ public class Runner
             StringBuilder b = new StringBuilder();
             b.append(Strings.padEnd(result.getScenario().getDescription(), 43, ' '))
              .append(" | ")
-             .append(Strings.padEnd(result.getOutcome().toString(), 7, ' '))
+             .append(Strings.padEnd(result.getOutcome().toString(), 10, ' '))
              .append(" | ")
              .append(Strings.padEnd(String.valueOf(result.getWeighings()), 9, ' '))
              .append(" |");
