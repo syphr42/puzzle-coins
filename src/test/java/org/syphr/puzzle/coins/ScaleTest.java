@@ -21,39 +21,21 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class ScaleTest
 {
-    static Scale scale;
+    Scale scale;
 
-    @BeforeAll
-    static void beforeAll()
+    @BeforeEach
+    void setup()
     {
         scale = new Scale();
     }
 
     @Test
-    void returnsPositiveNumberComparedToSmaller_SingleCoins()
-    {
-        assertTrue(scale.compare(coin(2), coin(1)) > 0);
-    }
-
-    @Test
-    void returnsNegativeNumberComparedToLarger_SingleCoins()
-    {
-        assertTrue(scale.compare(coin(1), coin(2)) < 0);
-    }
-
-    @Test
-    void returnsZeroComparedToEqual_SingleCoins()
-    {
-        assertTrue(scale.compare(coin(1), coin(1)) == 0);
-    }
-
-    @Test
-    void returnsPositiveNumberComparedToSmaller_Collections()
+    void returnsPositiveNumberComparedToSmaller()
     {
         assertAll(() -> assertTrue(scale.compare(coins(2), coins(1)) > 0),
                   () -> assertTrue(scale.compare(coins(1, 1), coins(1)) > 0),
@@ -64,7 +46,7 @@ class ScaleTest
     }
 
     @Test
-    void returnsNegativeNumberComparedToLarger_Collections()
+    void returnsNegativeNumberComparedToLarger()
     {
         assertAll(() -> assertTrue(scale.compare(coins(1), coins(2)) < 0),
                   () -> assertTrue(scale.compare(coins(1), coins(1, 1)) < 0),
@@ -75,7 +57,7 @@ class ScaleTest
     }
 
     @Test
-    void returnsZeroComparedToEqual_Collections()
+    void returnsZeroComparedToEqual()
     {
         assertAll(() -> assertTrue(scale.compare(coins(1), coins(1)) == 0),
                   () -> assertTrue(scale.compare(coins(2), coins(1, 1)) == 0),
@@ -83,6 +65,21 @@ class ScaleTest
                   () -> assertTrue(scale.compare(coins(3, 2, 1), coins(1, 2, 3)) == 0),
                   () -> assertTrue(scale.compare(coins(4, 2), coins(1, 2, 3)) == 0),
                   () -> assertTrue(scale.compare(coins(3, 3, 3), coins(4, 5)) == 0));
+    }
+
+    @Test
+    void countWeighings()
+    {
+        List<Coin> coins = coins(1);
+
+        scale.compare(coins, coins);
+        assertEquals(1, scale.getWeighings());
+
+        scale.compare(coins, coins);
+        assertEquals(2, scale.getWeighings());
+
+        scale.compare(coins, coins);
+        assertEquals(3, scale.getWeighings());
     }
 
     Coin coin(int weight)

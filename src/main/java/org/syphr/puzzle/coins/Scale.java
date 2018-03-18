@@ -19,17 +19,21 @@ import java.util.Collection;
 import java.util.Comparator;
 import java.util.stream.Collectors;
 
-public class Scale implements Comparator<Coin>
+public class Scale implements Comparator<Collection<Coin>>
 {
-    @Override
-    public int compare(Coin c1, Coin c2)
-    {
-        return c1.getWeight() - c2.getWeight();
-    }
+    private int weighings;
 
+    @Override
     public int compare(Collection<Coin> c1, Collection<Coin> c2)
     {
+        weighings++;
+
         return c1.stream().collect(Collectors.summingInt(coin -> coin.getWeight()))
                - c2.stream().collect(Collectors.summingInt(coin -> coin.getWeight()));
+    }
+
+    public int getWeighings()
+    {
+        return weighings;
     }
 }
