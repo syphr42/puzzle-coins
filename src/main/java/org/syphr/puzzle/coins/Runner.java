@@ -19,8 +19,12 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.Reader;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
 
+import org.syphr.puzzle.coins.RunResult.Outcome;
+
+import com.google.common.base.Strings;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -33,36 +37,33 @@ public class Runner
         this.strategy = strategy;
     }
 
-    public void run(MonitoredScale scale, List<Scenario> scenarios)
+    public List<RunResult> run(MonitoredScale scale, List<Scenario> scenarios)
     {
+        List<RunResult> results = new ArrayList<>();
+
         for (Scenario scenario : scenarios)
         {
-            System.out.println("Testing scenario: " + scenario.getDescription());
             Coin uniqueCoin = strategy.findUnique(scenario.getCoins(), scale);
 
-            System.out.println("Strategy made " + scale.getWeighings() + " weighings.");
-
+            Outcome outcome;
             if (uniqueCoin == null)
             {
-                System.out.println("Failed to find a unique coin.");
+                outcome = Outcome.NO_COIN;
             }
             else if (uniqueCoin.getId() != scenario.getUniqueCoinId())
             {
-                System.out.println("Identified the wrong coin as unique (strategy returned coin "
-                                   + uniqueCoin.getId()
-                                   + " while scenario expected coin "
-                                   + scenario.getUniqueCoinId()
-                                   + ").");
+                outcome = Outcome.WRONG_COIN;
             }
             else
             {
-                System.out.println("Correctly identified coin "
-                                   + uniqueCoin.getId()
-                                   + " as unique.");
+                outcome = Outcome.SUCCESS;
             }
 
+            results.add(new RunResult(scenario, outcome, scale.getWeighings()));
             scale.reset();
         }
+
+        return results;
     }
 
     public static void main(String[] args) throws InstantiationException,
@@ -77,7 +78,34 @@ public class Runner
         }
 
         Strategy strategy = (Strategy)Class.forName(args[0]).newInstance();
-        new Runner(strategy).run(new MonitoredScale(), defaultScenarios());
+        List<RunResult> results = new Runner(strategy).run(new MonitoredScale(),
+                                                           defaultScenarios());
+
+        printResults(results);
+    }
+
+    private static void printResults(List<RunResult> results)
+    {
+        String divider = "--------------------------------------------|---------|------------";
+
+        System.out.println(divider);
+        System.out.println("Scenario                                    | Outcome | Weighings |");
+        System.out.println(divider);
+
+        for (RunResult result : results)
+        {
+            StringBuilder b = new StringBuilder();
+            b.append(Strings.padEnd(result.getScenario().getDescription(), 43, ' '))
+             .append(" | ")
+             .append(Strings.padEnd(result.getOutcome().toString(), 7, ' '))
+             .append(" | ")
+             .append(Strings.padEnd(String.valueOf(result.getWeighings()), 9, ' '))
+             .append(" |");
+
+            System.out.println(b);
+        }
+
+        System.out.println(divider);
     }
 
     private static List<Scenario> defaultScenarios() throws IOException

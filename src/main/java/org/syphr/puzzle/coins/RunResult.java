@@ -15,36 +15,38 @@
  */
 package org.syphr.puzzle.coins;
 
-import java.util.Arrays;
-import java.util.Set;
-
-import com.google.common.collect.Sets;
-
-public class Scenario
+public class RunResult
 {
-    private final String description;
-    private final int uniqueCoinId;
-    private final Set<Coin> coins;
+    private final Scenario scenario;
+    private final Outcome outcome;
+    private final int weighings;
 
-    public Scenario(String description, int uniqueCoinId, Coin... coins)
+    public RunResult(Scenario scenario, Outcome outcome, int weighings)
     {
-        this.description = description;
-        this.uniqueCoinId = uniqueCoinId;
-        this.coins = Sets.newLinkedHashSet(Arrays.asList(coins));
+        this.scenario = scenario;
+        this.outcome = outcome;
+        this.weighings = weighings;
     }
 
-    public String getDescription()
+    public Scenario getScenario()
     {
-        return description;
+        return scenario;
     }
 
-    public int getUniqueCoinId()
+    public Outcome getOutcome()
     {
-        return uniqueCoinId;
+        return outcome;
     }
 
-    public Set<Coin> getCoins()
+    public int getWeighings()
     {
-        return coins;
+        return weighings;
+    }
+
+    public static enum Outcome
+    {
+     SUCCESS,
+     NO_COIN,
+     WRONG_COIN
     }
 }

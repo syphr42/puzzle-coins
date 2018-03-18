@@ -16,17 +16,15 @@
 package org.syphr.puzzle.coins;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.syphr.puzzle.coins.DataGenerator.*;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class MonitoredScaleTest
 {
-    int idGenerator = 0;
     MonitoredScale scale;
 
     @BeforeEach
@@ -91,15 +89,5 @@ class MonitoredScaleTest
         assertEquals(1, scale.getWeighings());
         scale.reset();
         assertEquals(0, scale.getWeighings());
-    }
-
-    Coin coin(int weight)
-    {
-        return new Coin(idGenerator++, weight);
-    }
-
-    List<Coin> coins(int... weights)
-    {
-        return Arrays.stream(weights).mapToObj(weight -> coin(weight)).collect(Collectors.toList());
     }
 }

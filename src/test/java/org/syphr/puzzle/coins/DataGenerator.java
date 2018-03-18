@@ -16,35 +16,25 @@
 package org.syphr.puzzle.coins;
 
 import java.util.Arrays;
-import java.util.Set;
+import java.util.List;
+import java.util.stream.Collectors;
 
-import com.google.common.collect.Sets;
-
-public class Scenario
+public class DataGenerator
 {
-    private final String description;
-    private final int uniqueCoinId;
-    private final Set<Coin> coins;
+    private static int idGenerator = 0;
 
-    public Scenario(String description, int uniqueCoinId, Coin... coins)
+    public static Coin coin(int weight)
     {
-        this.description = description;
-        this.uniqueCoinId = uniqueCoinId;
-        this.coins = Sets.newLinkedHashSet(Arrays.asList(coins));
+        return new Coin(idGenerator++, weight);
     }
 
-    public String getDescription()
+    public static List<Coin> coins(int... weights)
     {
-        return description;
+        return Arrays.stream(weights).mapToObj(weight -> coin(weight)).collect(Collectors.toList());
     }
 
-    public int getUniqueCoinId()
+    public static Scenario scenario(List<Coin> coins, Coin uniqueCoin)
     {
-        return uniqueCoinId;
-    }
-
-    public Set<Coin> getCoins()
-    {
-        return coins;
+        return new Scenario("test", uniqueCoin.getId(), coins.toArray(new Coin[coins.size()]));
     }
 }
