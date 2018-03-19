@@ -44,8 +44,11 @@ public class ThreePhaseStrategy implements Strategy
         List<Coin> group2 = oCoins.subList(group1End, group2End);
         List<Coin> group3 = oCoins.subList(group2End, count);
 
+        int group3Count = group3.size();
         return scale.compare(group1, group2) == 0
-                        ? findUniquePhase2(group1, group3, scale)
+                        ? findUniquePhase3(group3.subList(0, group3Count / 2),
+                                           group3.subList(group3Count / 2, group3Count),
+                                           scale)
                         : findUniquePhase2(group1, group2, scale);
     }
 
