@@ -26,7 +26,7 @@ import com.google.gson.reflect.TypeToken;
 
 public class DataLoader
 {
-    public static List<Scenario> defaultScenarios() throws IOException
+    public static List<Scenario> twelveCoinScenarios() throws IOException
     {
         try (Reader r = new InputStreamReader(Runner.class.getResourceAsStream("/org/syphr/puzzle/coins/12coins.json")))
         {
@@ -34,5 +34,10 @@ public class DataLoader
             {}.getType();
             return new Gson().fromJson(r, type);
         }
+    }
+
+    public static List<Scenario> allScenarios() throws IOException
+    {
+        return twelveCoinScenarios();
     }
 }

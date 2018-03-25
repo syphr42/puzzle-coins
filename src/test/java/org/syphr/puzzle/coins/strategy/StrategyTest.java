@@ -38,7 +38,7 @@ class StrategyTest
     @TestFactory
     public Stream<DynamicNode> testAllStrategies() throws IOException
     {
-        List<Scenario> scenarios = DataLoader.defaultScenarios();
+        List<Scenario> scenarios = DataLoader.allScenarios();
 
         Reflections r = new Reflections(Reflection.getPackageName(StrategyTest.class));
         return r.getSubTypesOf(Strategy.class)

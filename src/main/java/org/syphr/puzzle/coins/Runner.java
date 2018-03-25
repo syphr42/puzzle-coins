@@ -74,7 +74,7 @@ public class Runner
 
         Strategy strategy = (Strategy)Class.forName(args[0]).newInstance();
         List<RunResult> results = new Runner(strategy).run(new MonitoredScale(),
-                                                           DataLoader.defaultScenarios());
+                                                           DataLoader.twelveCoinScenarios());
 
         printResults(results);
     }
