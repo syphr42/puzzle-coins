@@ -58,7 +58,7 @@ public class ThreePhaseStrategy implements Strategy
         if (count % 2 != 0)
         {
             throw new IllegalArgumentException(ThreePhaseStrategy.class.getSimpleName()
-                                               + " is not applicable to sets where [count / 3] is not even");
+                                               + " is not applicable to sets where [count / 3] is not a multiple of 2");
         }
 
         List<Coin> group1A = group1.subList(0, count / 2);
