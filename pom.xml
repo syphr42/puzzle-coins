@@ -60,6 +60,12 @@
             <version>${junit.jupiter.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.reflections</groupId>
+            <artifactId>reflections</artifactId>
+            <version>0.9.11</version>
+            <scope>test</scope>
+        </dependency>
 
         <!-- Only required to run tests in an IDE that bundles an older version -->
         <dependency>
