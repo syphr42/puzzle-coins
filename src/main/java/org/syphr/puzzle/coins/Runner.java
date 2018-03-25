@@ -16,17 +16,12 @@
 package org.syphr.puzzle.coins;
 
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.syphr.puzzle.coins.RunResult.Outcome;
 
 import com.google.common.base.Strings;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
 
 public class Runner
 {
@@ -79,7 +74,7 @@ public class Runner
 
         Strategy strategy = (Strategy)Class.forName(args[0]).newInstance();
         List<RunResult> results = new Runner(strategy).run(new MonitoredScale(),
-                                                           defaultScenarios());
+                                                           DataLoader.defaultScenarios());
 
         printResults(results);
     }
@@ -106,15 +101,5 @@ public class Runner
         }
 
         System.out.println(divider);
-    }
-
-    private static List<Scenario> defaultScenarios() throws IOException
-    {
-        try (Reader r = new InputStreamReader(Runner.class.getResourceAsStream("/org/syphr/puzzle/coins/12coins.json")))
-        {
-            Type type = new TypeToken<List<Scenario>>()
-            {}.getType();
-            return new Gson().fromJson(r, type);
-        }
     }
 }
