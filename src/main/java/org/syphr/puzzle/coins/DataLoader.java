@@ -21,6 +21,7 @@ import java.io.Reader;
 import java.lang.reflect.Type;
 import java.util.List;
 
+import com.google.common.collect.ImmutableList;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -28,16 +29,29 @@ public class DataLoader
 {
     public static List<Scenario> twelveCoinScenarios() throws IOException
     {
-        try (Reader r = new InputStreamReader(Runner.class.getResourceAsStream("/org/syphr/puzzle/coins/12coins.json")))
+        return loadScenarios("/org/syphr/puzzle/coins/12coins.json");
+    }
+
+    public static List<Scenario> twentyFourCoinScenarios() throws IOException
+    {
+        return loadScenarios("/org/syphr/puzzle/coins/24coins.json");
+    }
+
+    public static List<Scenario> allScenarios() throws IOException
+    {
+        return ImmutableList.<Scenario>builder()
+                            .addAll(twelveCoinScenarios())
+                            .addAll(twentyFourCoinScenarios())
+                            .build();
+    }
+
+    public static List<Scenario> loadScenarios(String resource) throws IOException
+    {
+        try (Reader r = new InputStreamReader(Runner.class.getResourceAsStream(resource)))
         {
             Type type = new TypeToken<List<Scenario>>()
             {}.getType();
             return new Gson().fromJson(r, type);
         }
-    }
-
-    public static List<Scenario> allScenarios() throws IOException
-    {
-        return twelveCoinScenarios();
     }
 }
