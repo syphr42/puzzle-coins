@@ -45,14 +45,19 @@ public class ThreePhaseStrategy implements Strategy
         List<Coin> group3 = oCoins.subList(group2End, count);
 
         int group3Count = group3.size();
-        return scale.compare(group1, group2) == 0
-                        ? findUniquePhase3(group3.subList(0, group3Count / 2),
-                                           group3.subList(group3Count / 2, group3Count),
-                                           scale)
-                        : findUniquePhase2(group1, group2, scale);
+        int compareResult = scale.compare(group1, group2);
+        return compareResult == 0
+                        ? findUniquePhase3Groups(group3.subList(0, group3Count / 2),
+                                                 group3.subList(group3Count / 2, group3Count),
+                                                 scale,
+                                                 compareResult)
+                        : findUniquePhase2(group1, group2, scale, compareResult);
     }
 
-    private Coin findUniquePhase2(List<Coin> group1, List<Coin> group2, Scale scale)
+    private Coin findUniquePhase2(List<Coin> group1,
+                                  List<Coin> group2,
+                                  Scale scale,
+                                  int initialResult)
     {
         int count = group1.size();
         if (count % 2 != 0)
@@ -64,18 +69,43 @@ public class ThreePhaseStrategy implements Strategy
         List<Coin> group1A = group1.subList(0, count / 2);
         List<Coin> group1B = group1.subList(count / 2, count);
 
-        return scale.compare(group1A, group1B) == 0
-                        ? findUniquePhase3(group2.subList(0, count / 2),
-                                           group2.subList(count / 2, count),
-                                           scale)
-                        : findUniquePhase3(group1A, group1B, scale);
+        int compareResult = scale.compare(group1A, group1B);
+        if (compareResult == 0)
+        {
+            return findUniquePhase3Groups(group2.subList(0, count / 2),
+                                          group2.subList(count / 2, count),
+                                          scale,
+                                          initialResult * -1);
+        }
+
+        if (group1A.size() > 2)
+        {
+            return findUniquePhase2(group1A, group1B, scale, initialResult);
+        }
+
+        if (initialResult == 0)
+        {
+            return findUniquePhase3Groups(group1A, group1B, scale, initialResult);
+        }
+
+        if (Math.signum(initialResult) == Math.signum(compareResult))
+        {
+            return findUniquePhase3Singles(group1A.get(0), group1A.get(1), scale, initialResult);
+        }
+        else
+        {
+            return findUniquePhase3Singles(group1B.get(0), group1B.get(1), scale, initialResult);
+        }
     }
 
-    private Coin findUniquePhase3(List<Coin> group1, List<Coin> group2, Scale scale)
+    private Coin findUniquePhase3Groups(List<Coin> group1,
+                                        List<Coin> group2,
+                                        Scale scale,
+                                        int initialResult)
     {
         if (group1.size() > 2)
         {
-            return findUniquePhase2(group1, group2, scale);
+            return findUniquePhase2(group1, group2, scale, initialResult);
         }
 
         int group1Result = scale.compare(group1.get(0), group1.get(1));
@@ -89,5 +119,11 @@ public class ThreePhaseStrategy implements Strategy
             int crossGroupResult = scale.compare(group1.get(0), group2.get(0));
             return crossGroupResult == 0 ? group1.get(1) : group1.get(0);
         }
+    }
+
+    private Coin findUniquePhase3Singles(Coin c1, Coin c2, Scale scale, int initialResult)
+    {
+        int finalResult = scale.compare(c1, c2);
+        return Math.signum(initialResult) == Math.signum(finalResult) ? c1 : c2;
     }
 }
