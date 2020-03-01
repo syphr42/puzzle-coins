@@ -23,6 +23,8 @@ import org.syphr.puzzle.coins.Coin;
 import org.syphr.puzzle.coins.Scale;
 import org.syphr.puzzle.coins.Strategy;
 
+import com.google.common.collect.ImmutableList;
+
 public class FourGroupsStrategy implements Strategy
 {
     @Override
@@ -47,13 +49,21 @@ public class FourGroupsStrategy implements Strategy
         List<Coin> group4 = oCoins.subList(group3End, count);
 
         int group12Result = (int)Math.signum(scale.compare(group1, group2));
-        int group13Result = (int)Math.signum(scale.compare(group1, group3));
-
         switch (group12Result)
         {
             case 0:
             {
-                switch (group13Result)
+                List<Coin> group13 = ImmutableList.<Coin>builder()
+                                                  .addAll(group1)
+                                                  .addAll(group3)
+                                                  .build();
+                List<Coin> group24 = ImmutableList.<Coin>builder()
+                                                  .addAll(group2)
+                                                  .addAll(group4)
+                                                  .build();
+                int group1324Result = (int)Math.signum(scale.compare(group13, group24));
+
+                switch (group1324Result)
                 {
                     case 0:
                     {
@@ -80,6 +90,7 @@ public class FourGroupsStrategy implements Strategy
 
             default:
             {
+                int group13Result = (int)Math.signum(scale.compare(group1, group3));
                 switch (group13Result)
                 {
                     case 0:
